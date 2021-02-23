@@ -1,2 +1,48 @@
-<h1>Pages#home</h1>
+<h1>Landing Page</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<p>Hello Georgi, Landon, Laurier and Nicolas</p>
+
+<div class="container">
+  <div class="row">    
+   <div class="col-xs-8 col-xs-offset-2">
+    <div class="input-group">
+     <div class="input-group-btn search-panel">
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span id="search_concept">All</span> <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu scrollable-dropdown" role="menu">
+        <li><a href="#">Biking</a></li>
+        <li><a href="#">Hiking</a></li>
+        <li><a href="#">Scuba Diving</a></li>
+        <li><a href="#">Skiing</a></li>
+      </ul>
+     </div>
+     <input type="hidden" name="search_param" value="all" id="search_param">
+     <input type="text" class="form-control" name="x" id="search" placeholder="Search">
+     <span class="input-group-btn">
+	     <button class="btn btn-default" type="button">
+	       <span class="glyphicon glyphicon-search"></span>
+	     </button>
+	 </span>
+    </div>
+   </div>
+  </div>
+</div>
+
+<div class="categories ">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.rei.com/dam/content_team_080317_61569_mountain_biking_beginners_lg.jpg)">
+    Biking
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/woman-hiking-at-red-rock-canyon-during-sunset-with-royalty-free-image-1601478369.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*)">
+    Hiking
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fbradjaphe%2Ffiles%2F2018%2F09%2FMOBAY-Deep-Divers-1200x688.jpg)">
+    Scuba Diving
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.simpleviewcms.com/simpleview/image/upload/c_fill,q_65,w_1600/v1/clients/norway/hemsedal_ski_resort_eastern_norway_photo_ola_matsson_2_1_fb3ddacb-9ea4-4877-81e5-e9a5d3dfe337.jpg)">
+    Skiing
+  </div>
+</div>
