@@ -1,0 +1,23 @@
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 250px;
+  margin: 10px;
+}
+
+.categories {
+  display: inline-grid;
+  grid-template-columns: 275px 275px 275px 275px;
+  grid-template-rows: 200px 200px 200px; 
+  gap: 15px 10px;
+}
