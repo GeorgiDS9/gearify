@@ -1,1 +1,11 @@
 <h1>Gear Index</h1>
+
+<ol>
+<% @gears.each do |gear| %>
+<li>
+</label><%= link_to gear.name, gear_path(gear) %></li>
+<%= link_to "delete", gear_path(gear), method: :delete %>
+<% end %>
+</ol>
+
+<%= link_to "Create a Posting", new_gear_path %>
