@@ -58,7 +58,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "CHANGE_THIS_TO_YOUR_RAILS_APP_NAME_production"
+  # config.active_job.queue_name_prefix = "gearify_production"
 
   config.action_mailer.perform_caching = false
 

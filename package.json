@@ -1,5 +1,5 @@
 {
-  "name": "CHANGE_THIS_TO_YOUR_RAILS_APP_NAME",
+  "name": "gearify",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
