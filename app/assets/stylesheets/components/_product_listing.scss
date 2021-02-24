@@ -1,0 +1,15 @@
+.product-listing {
+  list-style-type: none;
+}
+
+.product-listing ul {
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: 500px 500px 500px;
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.product-listing li {
+  margin: auto;
+}

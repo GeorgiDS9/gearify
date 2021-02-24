@@ -1,1 +1,6 @@
-<h1>Show Gear</h1>
+<h1><%= @gear.name %></h1>
+<h3><%= @gear.category %></h3>
+<h3><%= @gear.price %></h3>
+<p><%= @gear.description %></p>
+<p><%= link_to "Back to list", gears_path %></p>
+<p><%= link_to "Home", root_path %></p>
