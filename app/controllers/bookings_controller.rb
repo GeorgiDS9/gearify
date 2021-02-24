@@ -1,21 +1,7 @@
 class BookingsController < ApplicationController
   def index
-  @bookings = Booking.all
-end
-
-def create
-  @booking = Booking.new(booking_params)
-  @booking.user = current_user
-
-    # authorize(@booking)
-
-  if @booking.save
-      redirect_to booking_path, notice: 'Booking was successfully created.'
-  else
-      render :new
-  end
-  end
-end
+    @bookings = Booking.all
+  end 
 
   def show
     @booking = Booking.find(params[:id])
@@ -24,6 +10,19 @@ end
   def new
     @gear = Gear.find(params[:gear_id])
     @booking = Booking.new
+  end
+
+  def create
+    @booking = Booking.new(booking_params)
+    @gear = Gear.find(params[:gear_id])
+    @booking.gear = @gear
+    @booking.user = current_user
+
+    if @booking.save
+      redirect_to gear_path(@gear), notice: 'Booking was successfully created.'
+    else
+      render :new
+    end
   end
 
   private
