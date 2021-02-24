@@ -39,5 +39,3 @@ User.all.each do |user|
 end
 
 User.create!(email: "demo@demo.demo", password: "123456")
-
-

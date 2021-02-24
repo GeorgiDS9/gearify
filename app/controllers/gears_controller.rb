@@ -1,6 +1,7 @@
 class GearsController < ApplicationController
 
   def index
+    raise
     @gears = Gear.all
   end
 
