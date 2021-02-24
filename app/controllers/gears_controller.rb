@@ -4,14 +4,14 @@ class GearsController < ApplicationController
     @gears = Gear.all
   end
 
-  def show 
+  def show
     @gear = Gear.find(params[:id])
   end
-  
+
   def new
     @gear = Gear.new
   end
-  
+
   def create
     @gear = Gear.new(gear_params)
     @gear.user = current_user
@@ -27,13 +27,13 @@ class GearsController < ApplicationController
   def destroy
     @gears = Gear.all
     @gear = Gear.find(params[:id])
-    
+
     @gear.destroy
 
     redirect_to gears_path
 
   end
-  
+
   private
 
   def gear_params
