@@ -1,9 +1,16 @@
 class BookingsController < ApplicationController
-def index
+  def show
+    @booking = Booking.find(params[:id])
+  end
 
-end
+  def new
+    @gear = Gear.find(params[:gear_id])
+    @booking = Booking.new
+  end
 
-def create
+  private
 
-end
+  def booking_params
+    params.require(:booking).permit(:start_time, :end_time, :user_id, :gear_id)
+  end
 end
