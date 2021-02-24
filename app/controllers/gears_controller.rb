@@ -1,8 +1,11 @@
 class GearsController < ApplicationController
 
   def index
-    raise
     @gears = Gear.all
+
+    if params[:category].present?
+      @gears = Gear.where(category: params[:category])
+    end
   end
 
   def show
