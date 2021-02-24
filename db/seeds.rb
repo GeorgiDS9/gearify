@@ -38,6 +38,6 @@ User.all.each do |user|
   end
 end
 
-User.create!(email: "demo@demo.demo" password: "123456")
+User.create!(email: "demo@demo.demo", password: "123456")
 
 
