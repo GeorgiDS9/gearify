@@ -1,11 +1,24 @@
 <h1>Gear Index</h1>
 
-<ol>
-<% @gears.each do |gear| %>
-<li>
-</label><%= link_to gear.name, gear_path(gear) %></li>
-<%= link_to "delete", gear_path(gear), method: :delete %>
-<% end %>
-</ol>
+<p><%= link_to "Add a gear", new_gear_path %></p>
+<p><%= link_to "Home", root_path %></p>
 
-<%= link_to "Create a Posting", new_gear_path %>
+<div class="product-listing">
+<ul>
+  <% @gears.each do |gear| %>
+  <li>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+      <div class="card-product-infos">
+        <h3><%= link_to gear.name, gear_path(gear) %></h3>
+        <p><%= gear.price %></p>
+        <p class="delete-button"><%= link_to "delete", gear_path(gear), method: :delete %></p>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+</div>
+
+
+

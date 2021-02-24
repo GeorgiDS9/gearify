@@ -4,8 +4,10 @@
 <%= simple_form_for(@gear) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :category %>
-  <%= f.input :price %>
+  <%= f.input :category, collection: Gear::CATEGORIES %>
+  <%= f.input :price, prompt: "in $" %>
   <%= f.submit %>
 <% end %>
 </div>
+
+<%= link_to "Cancel - Back to list", gears_path %>
