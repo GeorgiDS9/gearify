@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
+puts "Cleaning database..."
+Gear.destroy_all
+
+categories = ["biking", "hiking", "scuba", "skiing"]
+
+categories.each do |category|
+  30.times do 
+    Gear.create(
+      name: Faker::FunnyName.two_word_name,
+      description: "This is a thorough description :)",
+      price: Faker::Number.decimal(l_digits: 2).to_s,
+      category: category,
+      user_id: 1
+    )
+  end
+end
