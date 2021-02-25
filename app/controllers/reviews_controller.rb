@@ -6,18 +6,21 @@ class ReviewsController < ApplicationController
   def new
     @booking = Booking.find(params[:booking_id])
     @review = Review.new
+    unless current_user.can_leave_a_review_for?(@booking)
+      redirect_to gear_path(@booking.gear), notice: "You cannot leave a review for this"
+    end
   end
 
   def create
-    @review = Review.new(review_params)
     @booking = Booking.find(params[:booking_id])
-    @review.booking = @booking
-    # @review.user = current_user
-
-    if @review.save
-      redirect_to review_path(@review), notice: 'Review was successfully submitted.'
-    else
-      render :new
+    if current_user.can_leave_a_review_for?(@booking)
+      @review = Review.new(review_params)
+      @review.booking = @booking
+      if @review.save
+        redirect_to gear_path(@booking.gear), notice: 'Review was successfully submitted.'
+      else
+        render :new
+      end
     end
   end
   
