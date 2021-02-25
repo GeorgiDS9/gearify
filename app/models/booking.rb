@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :gear
-  validates :start_time, :end_time, presence: true
+  validates :start_time, :end_time, presence: true, availability: true
   validate :end_time_after_start_time
 
   private 

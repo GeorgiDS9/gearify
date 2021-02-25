@@ -1,5 +1,6 @@
 <h1>New Booking</h1>
 <h2><%= @gear.name %></h2>
+<p id="widget" data-unavailable="<%= @gear.unavailable_dates.to_json %>"></p>
 <%= simple_form_for [ @gear, @booking ] do |f| %>
   <%= f.input :start_time, as: :string, input_html: { class: "datepicker"} %>
   <%= f.input :end_time, as: :string, input_html: { class: "datepicker" } %>
