@@ -5,4 +5,14 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+
+
+  def can_leave_a_review_for?(booking)
+    self == booking.user
+  end
+
+  def can_make_a_booking_for?(gear)
+    self != gear.user
+  end
 end

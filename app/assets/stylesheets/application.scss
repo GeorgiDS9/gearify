@@ -15,6 +15,7 @@
 @import "components/cards";
 @import "components/product_listing";
 @import "components/banner";
+@import "components/footer";
 
 body {
   background-color: #FFFFFF;
@@ -23,4 +24,37 @@ body {
 
 .container {
   text-align: center;
+}
+
+.form {
+  margin: 500px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 30px;
+}
+
+.titles {
+  padding: 30px;
+}
+
+h1 {
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.form-input {
+  margin: 500px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.background-image {
+  background-size: cover;
+}
+
+.product-listing {
+  margin: 30px;
+}
+
+.form-actions {
+  margin: 30px;
 }
