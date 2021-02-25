@@ -1,2 +1,40 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>My Profile</h1>
+
+<h2>My Gear</h2>
+
+<div class="product-listing">
+<ul>
+  <% @my_gears.each do |gear| %>
+  <li>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+      <div class="gear-infos">
+        <p><%= gear.name %></p>
+        <p>$<%= gear.price %></p>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+</div>
+
+<h2>Personal Bookings</h2>
+
+<div class="product-listing">
+<ul>
+  <% @personal_bookings.each do |booking| %>
+  <li>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+      <div class="personal-booking-infos">
+        <p><%= booking.start_time %></p>
+        <p><%= booking.end_time %></p>
+        <p><%= booking.calculate_price %></p>
+      </div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+</div>
+
+
