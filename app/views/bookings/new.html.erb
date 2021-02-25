@@ -1,7 +1,7 @@
 <h1>New Booking</h1>
 <h2><%= @gear.name %></h2>
 <%= simple_form_for [ @gear, @booking ] do |f| %>
-  <%= f.input :start_time %>
-  <%= f.input :end_time %>
+  <%= f.input :start_time, as: :string, input_html: { class: "datepicker"} %>
+  <%= f.input :end_time, as: :string, input_html: { class: "datepicker" } %>
   <%= f.submit "Book", class: "btn btn-primary" %>
 <% end %>
