@@ -18,7 +18,7 @@ User.create!(email: "c@c.c", password: "123456")
 pairs = {
   "biking" => ["Moutain Bike", "Helmet", "Twin Bike", "Pedals With clips", "Compressor", "Trail Building Tools"],
   "hiking" => ["Hiking Watch", "Ropes", "Crampons", "Backpack", "Camel Back"],
-  "scuba" => ["Tank", "Fins", "Boat", "Mask", "Spear Gun", "Dry Suit"], 
+  "scuba" => ["Tank", "Fins", "Boat", "Mask", "Spear Gun", "Dry Suit"],
   "skiing" => ["Skis", "Helmet", "Poles", "Goggles", "Ski Boots"]
 }
 
@@ -30,7 +30,7 @@ User.all.each do |user|
       Gear.create!(
         name: name,
         description: "Rent my #{category} #{name}, It rocks! :)",
-        price: Faker::Number.decimal(l_digits: 2).to_s,
+        price: Faker::Number.decimal(l_digits: 2),
         category: category,
         user: user
       )
