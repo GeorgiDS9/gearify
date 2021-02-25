@@ -1,12 +1,4 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = Booking.all
-  end 
-
-  def show
-    @booking = Booking.find(params[:id])
-  end
-
   def new
     @gear = Gear.find(params[:gear_id])
     @booking = Booking.new
@@ -28,6 +20,14 @@ class BookingsController < ApplicationController
         render :new
       end
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+
+    # TODO : redirect to user profile page
+    # redirect_to bookings_path
   end
 
   private

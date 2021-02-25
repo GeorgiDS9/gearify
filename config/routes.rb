@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :gears, only: [ :index, :show, :new, :create, :destroy ] do
     resources :bookings, only: [ :new, :create ]
   end
-  resources :bookings, only: [ :index, :show ] do
+  get 'users/profile', to: 'users#profile', as: 'profile'
+  resources :bookings, only: [ ] do
     resources :reviews, only: [ :new, :create ]
   end
   resources :reviews, only: [ :show ]

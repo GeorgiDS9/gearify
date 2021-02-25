@@ -1,10 +1,15 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :gear
+
   validates :start_time, :end_time, presence: true, availability: true
   validate :end_time_after_start_time
 
-  private 
+  def calculate_price
+    (self.end_time - self.start_time).to_i * gear.price
+  end
+
+  private
 
   def end_time_after_start_time
     return if end_time.blank? || start_time.blank?

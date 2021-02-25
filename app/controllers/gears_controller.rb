@@ -30,13 +30,9 @@ class GearsController < ApplicationController
   end
 
   def destroy
-    @gears = Gear.all
     @gear = Gear.find(params[:id])
-
     @gear.destroy
-
-    redirect_to gears_path
-
+    redirect_to gears_path, notice: "Gear was deleted"
   end
 
   private
