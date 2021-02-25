@@ -4,4 +4,10 @@ class Gear < ApplicationRecord
   validates :price, :description, :category, :name, presence: true;
 
   CATEGORIES = ["biking", "hiking", "scuba", "skiing"]
+
+  def unavailable_dates
+    bookings.pluck(:start_time, :end_time).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
 end
