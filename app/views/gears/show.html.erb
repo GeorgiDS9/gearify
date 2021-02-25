@@ -2,6 +2,5 @@
 <h3><%= @gear.category %></h3>
 <h3><%= @gear.price %></h3>
 <p><%= @gear.description %></p>
-<p><%= link_to "Back to list", gears_path %></p>
-<p><%= link_to "Home", root_path %></p>
-<%= link_to "Book this", new_gear_booking_path(@gear) %>
+
+<%= link_to "Book this", new_gear_booking_path(@gear), class: "btn-primary" %>

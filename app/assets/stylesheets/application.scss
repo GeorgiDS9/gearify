@@ -14,3 +14,13 @@
 @import "components/categories";
 @import "components/cards";
 @import "components/product_listing";
+@import "components/banner";
+
+body {
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+}

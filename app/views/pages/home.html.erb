@@ -1,57 +1,27 @@
-<%= link_to "Sign up", new_user_registration_path %>
-<%= link_to "Log in", user_session_path %>
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
-
-
-
-<h1>GEARIFY</h1>
-
-<p>Made with love by Georgi, Landon, Laurier and Nicolas</p>
-
-
-
-
-<div class="container">
-  <div class="row">    
-   <div class="col-xs-8 col-xs-offset-2">
-    <div class="input-group">
-     <div class="input-group-btn search-panel">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-        <span id="search_concept">All</span> <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu scrollable-dropdown" role="menu">
-        <li><a href="#">Biking</a></li>
-        <li><a href="#">Hiking</a></li>
-        <li><a href="#">Scuba Diving</a></li>
-        <li><a href="#">Skiing</a></li>
-      </ul>
-     </div>
-     <input type="hidden" name="search_param" value="all" id="search_param">
-     <input type="text" class="form-control" name="x" id="search" placeholder="Search">
-     <span class="input-group-btn">
-	     <button class="btn btn-default" type="button">
-	       <span class="glyphicon glyphicon-search"></span>
-	     </button>
-	 </span>
-    </div>
-   </div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://ecday.eu/app/uploads/2020/09/website-event-banner-outdoor-sports.png);">
+  <div class="container">
+    <h1>GEARIFY</h1>
+    <h2>for athletes, by athletes</h2>
+    <p>Rent the best gear wherever you are, whenever you want. </p>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
+    <%= link_to "Log in", new_user_session_path, class: "btn" %>
   </div>
 </div>
 
 <div class="categories ">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://www.rei.com/dam/content_team_080317_61569_mountain_biking_beginners_lg.jpg)">
-    <%= link_to "Biking", gears_path(category: "biking") %>
+    <%= link_to "Biking", gears_path(category: "biking"), class: "cards" %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/woman-hiking-at-red-rock-canyon-during-sunset-with-royalty-free-image-1601478369.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*)">
-    <%= link_to "Hiking", gears_path(category: "hiking") %>
+    <%= link_to "Hiking", gears_path(category: "hiking"), class: "cards" %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fbradjaphe%2Ffiles%2F2018%2F09%2FMOBAY-Deep-Divers-1200x688.jpg)">
-    <%= link_to "Scuba Diving", gears_path(category: "scuba") %>
+    <%= link_to "Scuba Diving", gears_path(category: "scuba"), class: "cards" %>
   </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://assets.simpleviewcms.com/simpleview/image/upload/c_fill,q_65,w_1600/v1/clients/norway/hemsedal_ski_resort_eastern_norway_photo_ola_matsson_2_1_fb3ddacb-9ea4-4877-81e5-e9a5d3dfe337.jpg)">
-    <%= link_to "Skiing", gears_path(category: "skiing") %>
+    <%= link_to "Skiing", gears_path(category: "skiing"), class: "cards" %>
   </div>
 </div>

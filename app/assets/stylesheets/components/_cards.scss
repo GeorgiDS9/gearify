@@ -32,3 +32,17 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.cards {
+  text-decoration-style: none;
+  color: azure;
+}
+
+.cards:hover {
+  color: beige;
+  text-decoration: none;
+  font-size: larger;
+  transition: 0s background-color;
+  transition-delay: 2s;
+
+}
