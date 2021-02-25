@@ -3,8 +3,10 @@
     <h1>GEARIFY</h1>
     <h2>for athletes, by athletes</h2>
     <p>Rent the best gear wherever you are, whenever you want. </p>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
-    <%= link_to "Log in", new_user_session_path, class: "btn" %>
+    <%= if user_sign_in? %>
+      <%= link_to "Log in", new_user_session_path, class: "btn" %>
+    <%= else %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
   </div>
 </div>
 
