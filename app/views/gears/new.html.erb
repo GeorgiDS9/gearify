@@ -1,13 +1,17 @@
-<h1>New Gear</h1>
+<div style="background-image: url(https://altitude-blog.com/wp-content/uploads/2019/01/Oakley_Banner.jpg);" class="background-image">
 
-<div class="wd-50">
-<%= simple_form_for(@gear) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :category, collection: Gear::CATEGORIES %>
-  <%= f.input :price, prompt: "in $" %>
-  <%= f.submit %>
-<% end %>
+<h1 class="titles">NEW GEAR</h1>
+
+<div class="form">
+  <div class="wd-50">
+      <%= simple_form_for(@gear) do |f| %>
+      <%= f.input :name, :placeholder => '-> simple and short name' %>
+      <%= f.input :description, :placeholder => '-> detailed description' %>
+      <%= f.input :category, collection: Gear::CATEGORIES, :placeholder => '-> select a category' %>
+      <%= f.input :price, :placeholder => '-> in $ per day' %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
 
-<%= link_to "Cancel - Back to list", gears_path %>
+</div>
