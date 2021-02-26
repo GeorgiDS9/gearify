@@ -78,7 +78,7 @@ mountain_items.each do |item|
     description: item[:description],
     price: item[:price],
     img_url: item[:image_url],
-    category: "mountain",
+    category: "mountain & hiking",
     user: User.all.sample
   )
 end
