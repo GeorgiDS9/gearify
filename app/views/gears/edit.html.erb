@@ -1,15 +1,16 @@
 <div style="background-image: url(https://altitude-blog.com/wp-content/uploads/2019/01/Oakley_Banner.jpg);" class="background-image">
 
-<h1 class="titles">EDIT GEAR</h1>
+  <h1 class="titles">EDIT GEAR</h1>
 
-<div class="form">
-  <div class="wd-50">
+  <div class="form">
+    <div class="wd-50">
       <%= simple_form_for(@gear) do |f| %>
-      <%= f.input :name, :placeholder => '-> simple and short name' %>
-      <%= f.input :description, :placeholder => '-> detailed description' %>
-      <%= f.input :category, collection: Gear::CATEGORIES, :placeholder => '-> select a category' %>
-      <%= f.input :price, :placeholder => '-> in $ per day' %>
-      <%= f.submit %>
-    <% end %>
+        <%= f.input :name, :placeholder => '-> simple and short name' %>
+        <%= f.input :description, :placeholder => '-> detailed description' %>
+        <%= f.input :category, collection: Gear::CATEGORIES, :placeholder => '-> select a category' %>
+        <%= f.input :price, :placeholder => '-> in $ per day' %>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
 </div>
