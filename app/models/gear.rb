@@ -3,7 +3,20 @@ class Gear < ApplicationRecord
   belongs_to :user
   validates :price, :description, :category, :name, presence: true;
 
-  CATEGORIES = ["biking", "hiking", "scuba", "skiing"]
+  CATEGORIES = [
+    "cycling",
+    "mountain & hiking",
+    "water sports",
+    "snow sports",
+    "motor sports",
+    "extreme sports",
+    "urban sports",
+    "club & ball sports",
+    "team sports",
+    "martial arts",
+    "athletics",
+    "other"
+  ]
 
   def unavailable_dates
     bookings.pluck(:start_time, :end_time).map do |range|
