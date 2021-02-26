@@ -30,4 +30,35 @@ import { flatPickr } from '../plugins/flatpickr';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   flatPickr();
+  // totalDays();
 });
+
+const endDate = document.getElementById("booking_end_time");
+const startDate = document.getElementById("booking_start_time");
+
+const dayCounter = (value) => {
+  value.addEventListener('input', (event) => {
+    const startDate = new Date(document.querySelector("#booking_start_time").value)
+    const endDate = new Date(document.querySelector("#booking_end_time").value)
+    const price = document.querySelector(".price").innerHTML;
+
+    const days = ((endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24));
+    
+    const total = (price * days);
+
+    if (days > 0 ) {
+      document.getElementById("error").innerHTML = "";
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("price").innerHTML = price;
+      document.getElementById("total").innerHTML = total;
+    } else {
+      document.getElementById("error").innerHTML = "Start Date needs to be before End Date Silly!";
+      document.getElementById("days").innerHTML = "";
+      document.getElementById("price").innerHTML = "";
+      document.getElementById("total").innerHTML = "";
+    };
+  });
+}
+
+dayCounter(endDate);
+dayCounter(startDate);
