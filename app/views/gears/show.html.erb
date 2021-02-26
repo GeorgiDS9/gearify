@@ -3,4 +3,19 @@
 <h3>$<%= @gear.price %> / day</h3>
 <p><%= @gear.description %></p>
 
-<%= link_to "Book this", new_gear_booking_path(@gear), class: "btn-primary" %>
+<%# if current user is the owner of the gear, display bookings, else display link_to bookings#new %>
+<% if @user == @gear.user %>
+  <h3>My Gear Bookings</h3>
+  <ul>
+    <% @gear.bookings.each do |booking| %>
+      <li><%= booking %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <%= link_to "Book this", new_gear_booking_path(@gear), class: "btn-primary" %>
+<% end %>
+
+<%# beelow displays reviews, regardless of user status %>
+<% @gear.bookings.each do |booking| %>
+  <%= booking.review %>
+<% end %>

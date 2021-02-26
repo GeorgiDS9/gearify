@@ -11,6 +11,7 @@ class GearsController < ApplicationController
 
   def show
     @gear = Gear.find(params[:id])
+    @user = current_user
   end
 
   def new
