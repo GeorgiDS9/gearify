@@ -1,8 +1,10 @@
-<h1><%= @gear.name %></h1>
-<h3><%= @gear.category %></h3>
-<h3>$<%= @gear.price %> / day</h3>
-<p><%= @gear.description %></p>
-
+<div class="container">
+  <h1><%= @gear.name %></h1>
+  <img src="<%= @gear.img_url %>" alt="" class="show-image"> 
+  <%# <h3>= @gear.category</h3> %>
+  <h3 class="pt-3">$<%= @gear.price %> / day</h3>
+  <p>Description: <%= @gear.description %></p>
+</div>
 <%# if current user is the owner of the gear, display bookings, else display link_to bookings#new %>
 <% if @user == @gear.user %>
     <%= link_to "Edit", edit_gear_path(@gear) %>
@@ -13,7 +15,7 @@
     <% end %>
   </ul>
 <% else %>
-  <%= link_to "Book this", new_gear_booking_path(@gear), class: "btn-primary" %>
+  <%= link_to "Book this", new_gear_booking_path(@gear), class: "btn-success p-2 rounded-pill" %>
 <% end %>
 
 <%# beelow displays reviews, regardless of user status %>
