@@ -1,40 +1,66 @@
-<h1>My Profile</h1>
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<p><%= @user.email %></p>
 
-<h2>My Gear</h2>
-
-<div class="product-listing">
-<ul>
-  <% @my_gears.each do |gear| %>
-  <li>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
-      <div class="gear-infos">
-        <p><%= gear.name %></p>
-        <p>$<%= gear.price %></p>
-      </div>
-    </div>
-  </li>
-  <% end %>
-</ul>
-</div>
-
-<h2>Personal Bookings</h2>
+<h2>My Gear <%= link_to "+", new_gear_path %></h2>
 
 <div class="product-listing">
-<ul>
-  <% @personal_bookings.each do |booking| %>
-  <li>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
-      <div class="personal-booking-infos">
-        <p><%= booking.start_time %></p>
-        <p><%= booking.end_time %></p>
-        <p><%= booking.calculate_price %></p>
-      </div>
-    </div>
-  </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @my_gears.each do |gear| %>
+      <li>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+          <div class="gear-infos">
+            <p><%= gear.name %></p>
+            <p>$<%= gear.price %> / day</p>
+            <%= link_to "Show", gear_path(gear)%>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
+<h2>Upcoming Bookings</h2>
 
+<div class="product-listing">
+  <ul>
+    <% @personal_bookings.each do |booking| %>
+      <% if Time.now <= booking.end_time %>
+        <li>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+            <div class="personal-booking-infos">
+              <p><%= booking.gear.user.email %></p>
+              <p>from: <%= booking.start_time %> to: <%= booking.end_time %></p>
+              <p>TOTAL : $<%= booking.calculate_price %></p>
+              <%= link_to "Show", gear_path(booking.gear) %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<h2>Past Bookings</h2>
+
+<div class="product-listing">
+  <ul>
+    <% @personal_bookings.each do |booking| %>
+      <% if Time.now > booking.end_time %>
+        <li>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+            <div class="personal-booking-infos">
+              <p><%= booking.gear.user.email %></p>
+              <p>from: <%= booking.start_time %> to: <%= booking.end_time %></p>
+              <p><%= booking.calculate_price %></p>
+              <p><%= link_to "Show", gear_path(booking.gear) %></p>
+              <p><%= link_to "Review", new_booking_review_path(booking) %></p>
+            </div>
+          </div>
+        </li> 
+      <% end %>
+    <% end %>
+  </ul>
+</div>
