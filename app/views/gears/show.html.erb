@@ -1,6 +1,6 @@
 <h1><%= @gear.name %></h1>
 <h3><%= @gear.category %></h3>
-<h3><%= @gear.price %></h3>
+<h3>$<%= @gear.price %> / day</h3>
 <p><%= @gear.description %></p>
 
 <%# if current user is the owner of the gear, display bookings, else display link_to bookings#new %>

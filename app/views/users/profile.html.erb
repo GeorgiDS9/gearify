@@ -11,7 +11,7 @@
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
           <div class="gear-infos">
             <p><%= gear.name %></p>
-            <p>$<%= gear.price %></p>
+            <p>$<%= gear.price %> / day</p>
             <%= link_to "Show", gear_path(gear)%>
           </div>
         </div>
@@ -32,7 +32,7 @@
             <div class="personal-booking-infos">
               <p><%= booking.gear.user.email %></p>
               <p>from: <%= booking.start_time %> to: <%= booking.end_time %></p>
-              <p><%= booking.calculate_price %></p>
+              <p>TOTAL : $<%= booking.calculate_price %></p>
               <%= link_to "Show", gear_path(booking.gear) %>
             </div>
           </div>
