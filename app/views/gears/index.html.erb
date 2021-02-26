@@ -1,18 +1,13 @@
-<div class="product-listing">
-  <ul>
+<div class="container">
+  <div class="row">
     <% @gears.each do |gear| %>
-    <li>
-      <div class="card-product">
-        <img src="<%= gear.img_url %>" alt="" class="card-images">
-        <div class="card-product-infos">
+      <div class="col-md-6 col-sm-12">
+        <div class="card-product responsive">
+          <img src="<%= gear.img_url %>" alt="" class="card-images">
           <h3><%= link_to gear.name, gear_path(gear) %></h3>
           <p>$<%= gear.price %> / day</p>
         </div>
       </div>
-    </li>
     <% end %>
-  </ul>
+  </div>
 </div>
-
-
-
