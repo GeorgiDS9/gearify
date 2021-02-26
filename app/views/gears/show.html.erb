@@ -1,13 +1,9 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-6 col-sm-12">
       <h1><%= @gear.name %></h1>
       <img src="<%= @gear.img_url %>" alt="" class="show-image">
       <%# <h3>= @gear.category</h3> %>
       <h3 class="pt-3">$<%= @gear.price %> / day</h3>
       <p>Description: <%= @gear.description %></p>
-    </div>
-  </div>
 </div>
 <%# if current user is the owner of the gear, display bookings, else display link_to bookings#new %>
 <% if @user == @gear.user %>
