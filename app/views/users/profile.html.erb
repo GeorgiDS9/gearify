@@ -11,6 +11,7 @@
           <div class="gear-infos">
             <p><%= gear.name %></p>
             <p>$<%= gear.price %></p>
+            <%= link_to "Show", gear_path(gear)%>
           </div>
         </div>
       </li>
@@ -31,6 +32,7 @@
               <p><%= booking.gear.user.email %></p>
               <p>from: <%= booking.start_time %> to: <%= booking.end_time %></p>
               <p><%= booking.calculate_price %></p>
+              <%= link_to "Show", gear_path(booking.gear) %>
             </div>
           </div>
         </li>
@@ -52,7 +54,8 @@
               <p><%= booking.gear.user.email %></p>
               <p>from: <%= booking.start_time %> to: <%= booking.end_time %></p>
               <p><%= booking.calculate_price %></p>
-            </div>
+              <%= link_to "Show", gear_path(booking.gear) %>
+              <%= link_to "Review", new_booking_review_path(booking) %>
             </div>
           </div>
         </li> 
