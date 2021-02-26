@@ -8,7 +8,7 @@
     <% @my_gears.each do |gear| %>
       <li>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+          <img src="<%= gear.img_url %>"/>
           <div class="gear-infos">
             <p><%= gear.name %></p>
             <p>$<%= gear.price %> / day</p>
@@ -28,9 +28,9 @@
       <% if Time.now <= booking.end_time %>
         <li>
           <div class="card-product">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+            <img src="<%= booking.gear.img_url %>"/>
             <div class="personal-booking-infos">
-              <p><%= booking.gear.user.email %></p>
+              <p><%= booking.gear.name %></p>
               <p>from: <%= booking.start_time %> to: <%= booking.end_time %></p>
               <p>TOTAL : $<%= booking.calculate_price %></p>
               <p><%= link_to "Show", gear_path(booking.gear) %></p>
