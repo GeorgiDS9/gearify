@@ -1,6 +1,6 @@
 <h1><%= @gear.name %></h1>
 <h3><%= @gear.category %></h3>
-<h3><%= @gear.price %></h3>
+<h3>$<%= @gear.price %> / day</h3>
 <p><%= @gear.description %></p>
 
 <%= link_to "Book this", new_gear_booking_path(@gear), class: "btn-primary" %>

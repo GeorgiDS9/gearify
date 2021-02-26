@@ -26,8 +26,10 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import { flatPickr } from '../plugins/flatpickr';
+import { bookingCalenderPriceCalculator } from '../plugins/booking_calender_price_calculator';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   flatPickr();
+  bookingCalenderPriceCalculator();
 });
