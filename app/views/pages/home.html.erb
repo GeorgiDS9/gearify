@@ -14,8 +14,9 @@
 </div>
 
 <div class="categories ">
-  Gear::CATEGORIES.each |category| do
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @category_images[category] %>)">
-    <%= link_to titleize(category), gears_path(category: category), class: "cards" %>
-  </div>
+  <% Gear::CATEGORIES.each do |category| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @category_images[category] %>)">
+      <%= link_to titleize(category), gears_path(category: category), class: "cards" %>
+    </div>
+  <% end %>
 </div>
