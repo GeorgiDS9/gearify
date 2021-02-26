@@ -13,10 +13,14 @@
   </div>
 </div>
 
-<div class="categories ">
+<div class="container ">
+  <div class="row">
   <% Gear::CATEGORIES.each do |category| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @category_images[category] %>)">
-      <%= link_to category.titleize, gears_path(category: category), class: "cards" %>
+    <div class="col-md-3 col-sm-6">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @category_images[category] %>)">
+        <%= link_to category.titleize, gears_path(category: category), class: "cards" %>
+      </div>
     </div>
   <% end %>
+  </div>
 </div>
