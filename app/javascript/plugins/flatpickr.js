@@ -15,4 +15,15 @@ const flatPickr = () => {
   }
 };
 
+const totalDays = () => {
+  const endDate = document.querySelector(".end_date").addEventListener('input', (event) => {
+    let startDate = new Date(document.querySelector("#booking_start_time").value)
+    let endDate = new Date(event.target.value);
+    const days = ((endDate.getTime() - startDate.getTime()) / (1000 * 3600 * 24));
+
+    document.querySelector("#total").innerHTML(days);
+  });
+};
+
 export {flatPickr}
+export {totalDays}

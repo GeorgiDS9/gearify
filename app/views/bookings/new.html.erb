@@ -1,8 +1,14 @@
 <h1>New Booking</h1>
+
 <h2><%= @gear.name %></h2>
+
+<h5>$<span class="price"><%= @gear.price %></span> / day</h5>
+
 <p id="widget" data-unavailable="<%= @gear.unavailable_dates.to_json %>"></p>
 <%= simple_form_for [ @gear, @booking ] do |f| %>
-  <%= f.input :start_time, as: :string, input_html: { class: "datepicker"} %>
-  <%= f.input :end_time, as: :string, input_html: { class: "datepicker" } %>
+  <%= f.input :start_time, label: "Start Date", as: :string, input_html: { class: "datepicker"}, wrapper_html: { class: "w-5 inline_field_wrapper start_date" } %>
+  <%= f.input :end_time, label: "End Date", as: :string, input_html: { class: "datepicker" }, wrapper_html: { class: "w-5 inline_field_wrapper end_date" } %>
   <%= f.submit "Book", class: "btn btn-primary" %>
 <% end %>
+
+<p id="total"></p>
