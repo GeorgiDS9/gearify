@@ -33,7 +33,8 @@
               <p><%= booking.gear.user.email %></p>
               <p>from: <%= booking.start_time %> to: <%= booking.end_time %></p>
               <p>TOTAL : $<%= booking.calculate_price %></p>
-              <%= link_to "Show", gear_path(booking.gear) %>
+              <p><%= link_to "Show", gear_path(booking.gear) %></p>
+              <p><%= link_to "Cancel", booking_path(booking), method: :delete %></p>
             </div>
           </div>
         </li>
