@@ -30,6 +30,17 @@ class GearsController < ApplicationController
     end
   end
 
+  def edit
+    @gear = Gear.find(params[:id])
+  end
+
+  def update 
+    @gear = Gear.find(params[:id])
+    @gear.update(gear_params)
+
+    redirect_to @gear, notice: "Your gear has been edited"
+  end
+
   def destroy
     @gear = Gear.find(params[:id])
     @gear.destroy

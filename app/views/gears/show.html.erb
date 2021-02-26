@@ -5,6 +5,7 @@
 
 <%# if current user is the owner of the gear, display bookings, else display link_to bookings#new %>
 <% if @user == @gear.user %>
+    <%= link_to "Edit", edit_gear_path(@gear) %>
   <h3>My Gear Bookings</h3>
   <ul>
     <% @gear.bookings.each do |booking| %>
