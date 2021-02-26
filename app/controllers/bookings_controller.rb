@@ -25,9 +25,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-
-    # TODO : redirect to user profile page
-    # redirect_to bookings_path
+    redirect_to profile_path
   end
 
   private

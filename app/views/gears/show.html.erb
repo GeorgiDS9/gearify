@@ -16,6 +16,11 @@
 <% end %>
 
 <%# beelow displays reviews, regardless of user status %>
-<% @gear.bookings.each do |booking| %>
-  <%= booking.review.description %> <%= booking.review.rating %>
-<% end %>
+<ul>
+  <% @gear.reviews.each do |review| %>
+    <div class="">
+      <p><%= review.description %></p>
+      <p><%= review.booking.user.first_name %></p>
+    </div>
+  <% end %>
+</ul>
