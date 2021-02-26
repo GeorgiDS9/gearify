@@ -47,7 +47,7 @@
 <div class="product-listing">
   <ul>
     <% @personal_bookings.each do |booking| %>
-      <% if Time.now >= booking.end_time %>
+      <% if Time.now > booking.end_time %>
         <li>
           <div class="card-product">
             <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
