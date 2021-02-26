@@ -4,8 +4,10 @@
       <div class="col-md-6 col-sm-12">
         <div class="card-product responsive">
           <img src="<%= gear.img_url %>" alt="" class="card-images">
+          <div class="gear-infos">
           <h3><%= link_to gear.name, gear_path(gear) %></h3>
           <p>$<%= gear.price %> / day</p>
+          </div>
         </div>
       </div>
     <% end %>

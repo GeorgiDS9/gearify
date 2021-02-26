@@ -11,7 +11,9 @@
 </div>
 <%# if current user is the owner of the gear, display bookings, else display link_to bookings#new %>
 <% if @user == @gear.user %>
-    <%= link_to "Edit", edit_gear_path(@gear), class: "btn-success p-2 rounded-pill" %>
+    <div class="my-3">
+      <%= link_to "Edit", edit_gear_path(@gear), class: "btn-success px-4 py-2 rounded-pill" %>
+    </div>
   <h3>My Gear Bookings</h3>
   <ul>
     <% @gear.bookings.each do |booking| %>
@@ -19,7 +21,9 @@
     <% end %>
   </ul>
 <% else %>
-  <%= link_to "Book this", new_gear_booking_path(@gear), class: "btn-success p-2 rounded-pill" %>
+  <div class="my-3">
+  <%= link_to "Book this", new_gear_booking_path(@gear), class: "btn-success px-4 py-2 rounded-pill" %>
+  </div>
 <% end %>
 
 <%# beelow displays reviews, regardless of user status %>
