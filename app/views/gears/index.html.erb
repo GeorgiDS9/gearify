@@ -6,7 +6,7 @@
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
       <div class="card-product-infos">
         <h3><%= link_to gear.name, gear_path(gear) %></h3>
-        <p><%= gear.price %></p>
+        <p>$<%= gear.price %> / day</p>
         <p class="delete-button"><%= link_to "delete", gear_path(gear), method: :delete %></p>
       </div>
     </div>
